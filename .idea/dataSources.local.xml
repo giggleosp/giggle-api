@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - giggle@localhost" uuid="89b51b57-f48d-454e-b98f-8403cf9f0e1b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>giggle.pg_catalog giggle.public</schema-pattern>
+      <default-schemas>giggle.public</default-schemas>
+    </data-source>
+  </component>
+</project>
