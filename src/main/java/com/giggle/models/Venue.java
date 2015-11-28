@@ -4,7 +4,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * Created by Enda on 04/11/2015.
@@ -19,7 +18,7 @@ public class Venue {
     @NotNull
     private String name;
     @OneToOne
-    @JoinColumn(name = "user", nullable = false)
+    @JoinColumn
     private User user;
     @NotNull
     @Column(name = "address_line1")
@@ -27,6 +26,7 @@ public class Venue {
     @NotNull
     @Column(name = "address_line2")
     private String addressLine2;
+    @Column(name = "zip_code")
     private String zipCode;
     @NotNull
     @ManyToOne

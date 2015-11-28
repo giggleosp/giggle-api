@@ -3,11 +3,9 @@ package com.giggle.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * Created by Enda on 04/11/2015.
@@ -22,7 +20,7 @@ public class User {
     @Column(length = 50)
     private String name;
     @NotNull
-    @Column(length = 30)
+    @Column(length = 50)
     private String username;
     @NotNull
     private String email;
@@ -30,9 +28,9 @@ public class User {
     private String profilePicture;
     @Column(name = "profile_is_public")
     private boolean profileIsPublic;
-    @Column(columnDefinition = "char(60)", name = "hashed_password")
+    @Column(columnDefinition = "char(60)")
     @NotNull @JsonIgnore
-    private String hashedPassword;
+    private String password;
     @Column(name = "email_verified")
     private boolean emailVerified;
     @Column(name = "date_of_birth")
@@ -51,14 +49,15 @@ public class User {
     private Timestamp dateCreated;
     @Column(name = "date_updated")
     private Timestamp dateUpdated;
+    private boolean enabled;
 
     public User() {
     }
 
-    public User(String username, String email, String hashedPassword, Timestamp dateCreated) {
+    public User(String username, String email, String password, Timestamp dateCreated) {
         this.username = username;
         this.email = email;
-        this.hashedPassword = hashedPassword;
+        this.password = password;
         this.dateCreated = dateCreated;
     }
 
@@ -106,12 +105,12 @@ public class User {
         this.profileIsPublic = profileIsPublic;
     }
 
-    public String getHashedPassword() {
-        return hashedPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setHashedPassword(String hashedPassword) {
-        this.hashedPassword = hashedPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public boolean isEmailVerified() {
@@ -168,5 +167,13 @@ public class User {
 
     public void setDateUpdated(Timestamp dateUpdated) {
         this.dateUpdated = dateUpdated;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
