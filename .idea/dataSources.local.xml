@@ -3,7 +3,7 @@
   <component name="dataSourceStorageLocal">
     <data-source name="PostgreSQL - giggle@localhost" uuid="73e28b8b-5ee6-4447-908b-38d8917eeb9f">
       <secret-storage>master_key</secret-storage>
-      <user-name>postgres</user-name>
+      <user-name>enda</user-name>
       <schema-pattern>giggle.dev giggle.pg_catalog giggle.public</schema-pattern>
       <default-schemas>giggle.public</default-schemas>
     </data-source>

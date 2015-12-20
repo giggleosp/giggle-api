@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "events_views")
+@Table(name = "event_views")
 public class EventView {
 
     @Id

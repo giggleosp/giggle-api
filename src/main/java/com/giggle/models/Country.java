@@ -1,8 +1,8 @@
 package com.giggle.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * Created by Enda on 18/11/2015.
@@ -15,22 +15,31 @@ public class Country {
     @Id
     @GeneratedValue
     private long id;
-    @NotNull
+    @Column(columnDefinition = "char(2)")
+    private String iso;
     private String name;
-    @Column(name = "iso_code")
-    @NotNull
-    private String isoCode;
+    private String niceName;
+    @Column(columnDefinition = "char(3)")
+    private String iso3;
+    @JsonIgnore
+    private Integer numCode;
+    @JsonIgnore
+    private Integer phoneCode;
 
     public Country() {
     }
 
-    public Country(String name, String isoCode) {
-        this.name = name;
-        this.isoCode = isoCode;
+    public long getId() {
+        return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+
+    public String getIso() {
+        return iso;
+    }
+
+    public void setIso(String iso) {
+        this.iso = iso;
     }
 
     public String getName() {
@@ -41,11 +50,35 @@ public class Country {
         this.name = name;
     }
 
-    public String getIsoCode() {
-        return isoCode;
+    public String getNiceName() {
+        return niceName;
     }
 
-    public void setIsoCode(String isoCode) {
-        this.isoCode = isoCode;
+    public void setNiceName(String niceName) {
+        this.niceName = niceName;
+    }
+
+    public String getIso3() {
+        return iso3;
+    }
+
+    public void setIso3(String iso3) {
+        this.iso3 = iso3;
+    }
+
+    public Integer getNumCode() {
+        return numCode;
+    }
+
+    public void setNumCode(Integer numCode) {
+        this.numCode = numCode;
+    }
+
+    public Integer getPhoneCode() {
+        return phoneCode;
+    }
+
+    public void setPhoneCode(Integer phoneCode) {
+        this.phoneCode = phoneCode;
     }
 }

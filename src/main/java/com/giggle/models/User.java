@@ -1,18 +1,22 @@
 package com.giggle.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Enda on 04/11/2015.
  */
+@JsonDeserialize(builder=User.class)
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = {"email", "username"}))
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue
@@ -44,21 +48,24 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
-    @NotNull
     @Column(name = "date_created")
     private Timestamp dateCreated;
     @Column(name = "date_updated")
     private Timestamp dateUpdated;
     private boolean enabled;
+    @ManyToMany
+    private List<UserRole> roles;
 
     public User() {
     }
 
-    public User(String username, String email, String password, Timestamp dateCreated) {
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.dateCreated = dateCreated;
+        this.enabled = true;
+        this.emailVerified = false;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {

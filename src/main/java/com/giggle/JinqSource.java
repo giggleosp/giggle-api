@@ -1,6 +1,7 @@
 package com.giggle;
 
-import com.giggle.models.City;
+import com.giggle.models.Country;
+import com.giggle.models.County;
 import com.giggle.models.User;
 import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;
@@ -34,8 +35,11 @@ public class JinqSource {
         return streams.streamAll(em, User.class);
     }
 
-    // You can include helper methods here too
-    public JPAJinqStream<City> cities(EntityManager em) {
-        return streams.streamAll(em, City.class);
+    public JPAJinqStream<Country> countries(EntityManager em) {
+        return streams.streamAll(em, Country.class);
+    }
+
+    public JPAJinqStream<County> counties(EntityManager em) {
+        return streams.streamAll(em, County.class);
     }
 }
