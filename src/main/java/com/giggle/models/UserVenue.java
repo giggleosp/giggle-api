@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  */
 @Entity(name = "users_venues")
 
-public class VenueUser {
+public class UserVenue {
 
     @Id
     @GeneratedValue
@@ -28,10 +28,10 @@ public class VenueUser {
     @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
-    public VenueUser() {
+    public UserVenue() {
     }
 
-    public VenueUser(User user, Venue venue, boolean isFollowing) {
+    public UserVenue(User user, Venue venue, boolean isFollowing) {
         this.user = user;
         this.venue = venue;
         this.isFollowing = isFollowing;

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "entertainment_types", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
-public class EntertainmentType {
+public class EventType {
 
     @Id
     @GeneratedValue
@@ -16,10 +16,10 @@ public class EntertainmentType {
     @NotNull
     private String name;
 
-    public EntertainmentType() {
+    public EventType() {
     }
 
-    public EntertainmentType(String name) {
+    public EventType(String name) {
         this.name = name;
     }
 

@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "entertainers_fans")
-public class EntertainerFan {
+public class ActUser {
 
     @Id
     @GeneratedValue
@@ -21,7 +21,7 @@ public class EntertainerFan {
     @ManyToOne
     @NotNull
     @JoinColumn(name = "entertainer_id")
-    private Entertainer entertainer;
+    private Act act;
     @Column(name = "is_following")
     private boolean isFollowing;
     @NotNull
@@ -30,12 +30,12 @@ public class EntertainerFan {
     @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
-    public EntertainerFan() {
+    public ActUser() {
     }
 
-    public EntertainerFan(User user, Entertainer entertainer, boolean isFollowing) {
+    public ActUser(User user, Act act, boolean isFollowing) {
         this.user = user;
-        this.entertainer = entertainer;
+        this.act = act;
         this.isFollowing = isFollowing;
     }
 
@@ -51,12 +51,12 @@ public class EntertainerFan {
         this.user = user;
     }
 
-    public Entertainer getEntertainer() {
-        return entertainer;
+    public Act getAct() {
+        return act;
     }
 
-    public void setEntertainer(Entertainer entertainer) {
-        this.entertainer = entertainer;
+    public void setAct(Act act) {
+        this.act = act;
     }
 
     public boolean isFollowing() {

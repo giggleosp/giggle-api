@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "entertainer_reviews")
-public class EntertainerReview {
+public class ActReview {
 
     @Id
     @GeneratedValue
@@ -22,7 +22,7 @@ public class EntertainerReview {
     private String description;
     @ManyToOne(optional = false)
     @JoinColumn(name = "entertainer_id")
-    private Entertainer entertainer;
+    private Act act;
     @ManyToOne(optional = false)
     @JoinColumn(name = "reviewed_by_id")
     private User reviewedBy;
@@ -32,12 +32,12 @@ public class EntertainerReview {
     @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
-    public EntertainerReview() {
+    public ActReview() {
     }
 
-    public EntertainerReview(int rating, Entertainer entertainer, User reviewedBy, Timestamp dateCreated) {
+    public ActReview(int rating, Act act, User reviewedBy, Timestamp dateCreated) {
         this.rating = rating;
-        this.entertainer = entertainer;
+        this.act = act;
         this.reviewedBy = reviewedBy;
         this.dateCreated = dateCreated;
     }
@@ -62,12 +62,12 @@ public class EntertainerReview {
         this.description = description;
     }
 
-    public Entertainer getEntertainer() {
-        return entertainer;
+    public Act getAct() {
+        return act;
     }
 
-    public void setEntertainer(Entertainer entertainer) {
-        this.entertainer = entertainer;
+    public void setAct(Act act) {
+        this.act = act;
     }
 
     public User getReviewedBy() {
