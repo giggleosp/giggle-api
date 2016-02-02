@@ -16,64 +16,40 @@ public class Event {
     @Id
     @GeneratedValue
     private long id;
-    @NotNull
     private String name;
+    private boolean isEnabled; // is visible
     @ManyToOne @NotNull
-    @JoinColumn(name = "created_by_id")
-    private User createdBy;
-    @Column(name = "is_visible")
-    private boolean isVisible;
-    @ManyToOne @NotNull
-    @JoinColumn(name = "type_id")
-    private EntertainmentType type;
-    @ManyToOne @NotNull
-    @JoinColumn(name = "entertainer_id")
-    private Entertainer entertainer;
-    @ManyToOne @NotNull
-    @JoinColumn(name = "venue_id")
+    private EventType type;
+    private String description;
+    @ManyToOne
+    private Act act;
+    @ManyToOne
     private Venue venue;
     @OneToMany
-    private List<EntertainmentType> entertainmentTypes;
-    @ManyToOne
-    @JoinColumn(name = "parent_event_id")
-    private Event parentEvent;
-    @NotNull
-    @Column(name = "start_date")
+    private List<Event> childEvents;
     private Date startDate;
-    @NotNull
-    @Column(name = "end_date")
     private Date endDate;
     private float price;
-    @Max(100)
-    @Column(name = "minimum_age")
+    @Max(150)
     private int minimumAge;
-    @Column(name = "confirmed_by_entertainer")
-    private boolean confirmedByEntertainer;
-    @Column(name = "confirmed_by_venue")
-    private boolean confirmedByVenue;
-    @Column(name = "publish_date")
+    private boolean actConfirmed;
+    private boolean venueConfirmed;
     private Timestamp publishDate;
-    @NotNull
-    @Column(name = "date_created")
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public Event() {
     }
 
-    public Event(String name, Entertainer entertainer, Venue venue) {
+    public Event(String name, Act act, Venue venue) {
         this.name = name;
-        this.entertainer = entertainer;
+        this.act = act;
         this.venue = venue;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -84,36 +60,36 @@ public class Event {
         this.name = name;
     }
 
-    public User getCreatedBy() {
-        return createdBy;
+    public boolean isEnabled() {
+        return isEnabled;
     }
 
-    public void setCreatedBy(User createdBy) {
-        this.createdBy = createdBy;
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 
-    public boolean isVisible() {
-        return isVisible;
-    }
-
-    public void setVisible(boolean visible) {
-        isVisible = visible;
-    }
-
-    public EntertainmentType getType() {
+    public EventType getType() {
         return type;
     }
 
-    public void setType(EntertainmentType type) {
+    public void setType(EventType type) {
         this.type = type;
     }
 
-    public Entertainer getEntertainer() {
-        return entertainer;
+    public String getDescription() {
+        return description;
     }
 
-    public void setEntertainer(Entertainer entertainer) {
-        this.entertainer = entertainer;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Act getAct() {
+        return act;
+    }
+
+    public void setAct(Act act) {
+        this.act = act;
     }
 
     public Venue getVenue() {
@@ -124,20 +100,12 @@ public class Event {
         this.venue = venue;
     }
 
-    public List<EntertainmentType> getEntertainmentTypes() {
-        return entertainmentTypes;
+    public List<Event> getChildEvents() {
+        return childEvents;
     }
 
-    public void setEntertainmentTypes(List<EntertainmentType> entertainmentTypes) {
-        this.entertainmentTypes = entertainmentTypes;
-    }
-
-    public Event getParentEvent() {
-        return parentEvent;
-    }
-
-    public void setParentEvent(Event parentEvent) {
-        this.parentEvent = parentEvent;
+    public void setChildEvents(List<Event> childEvents) {
+        this.childEvents = childEvents;
     }
 
     public Date getStartDate() {
@@ -172,20 +140,20 @@ public class Event {
         this.minimumAge = minimumAge;
     }
 
-    public boolean isConfirmedByEntertainer() {
-        return confirmedByEntertainer;
+    public boolean isActConfirmed() {
+        return actConfirmed;
     }
 
-    public void setConfirmedByEntertainer(boolean confirmedByEntertainer) {
-        this.confirmedByEntertainer = confirmedByEntertainer;
+    public void setActConfirmed(boolean actConfirmed) {
+        this.actConfirmed = actConfirmed;
     }
 
-    public boolean isConfirmedByVenue() {
-        return confirmedByVenue;
+    public boolean isVenueConfirmed() {
+        return venueConfirmed;
     }
 
-    public void setConfirmedByVenue(boolean confirmedByVenue) {
-        this.confirmedByVenue = confirmedByVenue;
+    public void setVenueConfirmed(boolean venueConfirmed) {
+        this.venueConfirmed = venueConfirmed;
     }
 
     public Timestamp getPublishDate() {

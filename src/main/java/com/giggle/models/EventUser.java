@@ -14,22 +14,15 @@ public class EventUser {
     @Id
     @GeneratedValue
     private long id;
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    @NotNull @ManyToOne
     private User user;
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "event_id")
+    @NotNull @ManyToOne
     private Event event;
-    @Column(name = "is_following")
     private boolean isFollowing;
-    @Column(name = "is_attending")
     private boolean isAttending;
-    @NotNull
-    @Column(name = "date_created")
+    private boolean isAdmin;
+    private boolean isHidden;
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public EventUser() {
@@ -38,10 +31,15 @@ public class EventUser {
     public EventUser(User user, Event event) {
         this.user = user;
         this.event = event;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public User getUser() {
@@ -90,5 +88,21 @@ public class EventUser {
 
     public void setDateCreated(Timestamp dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public boolean isHidden() {
+        return isHidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        isHidden = hidden;
     }
 }

@@ -8,26 +8,20 @@ import java.sql.Timestamp;
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "entertainers_fans")
+@Table(name = "acts_users")
 public class ActUser {
 
     @Id
     @GeneratedValue
     private long id;
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "user_id")
+    @ManyToOne @NotNull
     private User user;
-    @ManyToOne
-    @NotNull
-    @JoinColumn(name = "entertainer_id")
+    @ManyToOne @NotNull
     private Act act;
-    @Column(name = "is_following")
     private boolean isFollowing;
-    @NotNull
-    @Column(name = "date_created")
+    private boolean isHidden;
+    private boolean isAdmin;
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public ActUser() {
@@ -37,6 +31,7 @@ public class ActUser {
         this.user = user;
         this.act = act;
         this.isFollowing = isFollowing;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
@@ -65,6 +60,22 @@ public class ActUser {
 
     public void setFollowing(boolean following) {
         isFollowing = following;
+    }
+
+    public boolean isHidden() {
+        return isHidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        isHidden = hidden;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     public Timestamp getDateUpdated() {

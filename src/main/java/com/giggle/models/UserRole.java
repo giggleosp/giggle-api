@@ -1,14 +1,15 @@
 package com.giggle.models;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by enda on 17/12/15.
  */
 @Entity
 @Table(name = "user_roles")
-public class UserRole {
+public class UserRole implements GrantedAuthority {
 
     @Id
     @GeneratedValue
@@ -34,4 +35,10 @@ public class UserRole {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String getAuthority() {
+        return name.toUpperCase();
+    }
+
 }

@@ -1,44 +1,38 @@
 package com.giggle.models;
 
 import javax.persistence.*;
-import javax.swing.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 
 /**
  * Created by Enda on 18/11/2015.
  */
-@Entity(name = "venue_reviews")
+@Entity
+@Table(name = "venue_reviews")
 public class VenueReview {
 
     @Id
     @GeneratedValue
     private long id;
-    @NotNull
     @Size(min = 1, max = 5)
     private int rating;
     @Column(length = 1000)
     private String description;
     @ManyToOne(optional = false)
     private Venue venue;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "reviewed_by_id")
-    private User reviewedBy;
-    @NotNull
-    @Column(name = "date_created")
+    @ManyToOne
+    private User user;
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public VenueReview() {
     }
 
-    public VenueReview(int rating, Venue venue, User reviewedBy, Timestamp dateCreated) {
+    public VenueReview(int rating, Venue venue, User user) {
         this.rating = rating;
         this.venue = venue;
-        this.reviewedBy = reviewedBy;
-        this.dateCreated = dateCreated;
+        this.user = user;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
@@ -69,12 +63,12 @@ public class VenueReview {
         this.venue = venue;
     }
 
-    public User getReviewedBy() {
-        return reviewedBy;
+    public User getUser() {
+        return user;
     }
 
-    public void setReviewedBy(User reviewedBy) {
-        this.reviewedBy = reviewedBy;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Timestamp getDateCreated() {

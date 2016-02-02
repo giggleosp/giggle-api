@@ -2,7 +2,6 @@ package com.giggle.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 /**
@@ -15,38 +14,38 @@ public class Venue {
     @Id
     @GeneratedValue
     private long id;
-    @NotNull
     private String name;
-    @OneToOne
-    @JoinColumn
-    private User user;
-    @NotNull
-    @Column(name = "address_line1")
     private String addressLine1;
-    @NotNull
-    @Column(name = "address_line2")
     private String addressLine2;
-    @Column(name = "zip_code")
+    private String addressLine3;
+    private String description;
     private String zipCode;
-    @NotNull
     @ManyToOne
-    @JoinColumn(name = "type_id")
     private VenueType type;
     private int capacity;
-    @Max(100)
-    @Column(name = "minimum_age")
+    @Max(150)
     private int minimumAge;
     private String email;
     private long phone;
     private String twitter;
     private String facebook;
-    @NotNull
-    @Column(name = "date_created")
+    private String googlePlus;
+    private String website;
+    @ManyToOne
+    private Country country;
+    @ManyToOne
+    private County county;
+    @ManyToOne
+    private City city;
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public Venue() {
+    }
+
+    public Venue(String name) {
+        this.name = name;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
@@ -59,14 +58,6 @@ public class Venue {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getAddressLine1() {
@@ -83,6 +74,22 @@ public class Venue {
 
     public void setAddressLine2(String addressLine2) {
         this.addressLine2 = addressLine2;
+    }
+
+    public String getAddressLine3() {
+        return addressLine3;
+    }
+
+    public void setAddressLine3(String addressLine3) {
+        this.addressLine3 = addressLine3;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getZipCode() {
@@ -147,6 +154,46 @@ public class Venue {
 
     public void setFacebook(String facebook) {
         this.facebook = facebook;
+    }
+
+    public String getGooglePlus() {
+        return googlePlus;
+    }
+
+    public void setGooglePlus(String googlePlus) {
+        this.googlePlus = googlePlus;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public County getCounty() {
+        return county;
+    }
+
+    public void setCounty(County county) {
+        this.county = county;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public Timestamp getDateCreated() {

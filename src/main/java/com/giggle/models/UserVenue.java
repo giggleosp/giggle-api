@@ -7,34 +7,30 @@ import java.sql.Timestamp;
 /**
  * Created by Enda on 18/11/2015.
  */
-@Entity(name = "users_venues")
-
+@Entity
+@Table(name = "users_venues")
 public class UserVenue {
 
     @Id
     @GeneratedValue
     private long id;
     @ManyToOne @NotNull
-    @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne @NotNull
-    @JoinColumn(name = "venue_id")
     private Venue venue;
-    @Column(name = "is_following")
     private boolean isFollowing;
-    @NotNull
-    @Column(name = "date_created")
+    private boolean isHidden;
+    private boolean isAdmin;
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public UserVenue() {
     }
 
-    public UserVenue(User user, Venue venue, boolean isFollowing) {
+    public UserVenue(User user, Venue venue) {
         this.user = user;
         this.venue = venue;
-        this.isFollowing = isFollowing;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
@@ -79,5 +75,21 @@ public class UserVenue {
 
     public void setDateUpdated(Timestamp dateUpdated) {
         this.dateUpdated = dateUpdated;
+    }
+
+    public boolean isHidden() {
+        return isHidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        isHidden = hidden;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

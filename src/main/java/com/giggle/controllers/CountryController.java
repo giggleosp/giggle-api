@@ -1,5 +1,6 @@
 package com.giggle.controllers;
 
+import com.giggle.exceptions.BadRequestException;
 import com.giggle.exceptions.NotFoundException;
 import com.giggle.models.Country;
 import com.giggle.models.County;
@@ -27,7 +28,7 @@ public class CountryController {
     public @ResponseBody List<Country> allCountries() {
         List<Country> countries = repo.allCountries();
 
-        if (countries.isEmpty())
+        if (countries == null)
             throw new NotFoundException();
         else {
             return countries;
@@ -36,10 +37,15 @@ public class CountryController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}/counties")
     public @ResponseBody List<County> getCountiesOfCountry(@PathVariable long id) {
+
+        if (id < 1) throw new BadRequestException();
+
+        if (getCountryById(id) == null) throw new NotFoundException();
+
         List<County> counties = repo
                 .allCountiesOfCountry(id);
 
-        if (counties.isEmpty())
+        if (counties == null)
             throw new NotFoundException();
         else {
             return counties;
@@ -49,12 +55,27 @@ public class CountryController {
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public @ResponseBody Country getCountryById(@PathVariable long id) {
 
-        Country country = repo
-                .getCountryById(id);
+        if (id < 1) throw new BadRequestException();
+
+        Country country = repo.getCountryById(id);
+
         if (country == null)
             throw new NotFoundException();
         else {
             return country;
         }
     }
+
+//    @RequestMapping(method = RequestMethod.GET, value = "/{name}")
+//    public @ResponseBody Country getCountryByName(@PathVariable String name) {
+//
+//        if (name == null) throw new BadRequestException();
+//
+//        Country country = repo.getCountryByName(name);
+//
+//        if (country == null)
+//            throw new NotFoundException();
+//        else
+//            return country;
+//    }
 }

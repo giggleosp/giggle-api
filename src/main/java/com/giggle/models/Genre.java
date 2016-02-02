@@ -16,7 +16,7 @@ public class Genre {
     @Column(unique = true, nullable = false)
     private String name;
     @ManyToMany
-    private List<EntertainmentType> entertainmentTypes;
+    private List<EventType> eventTypes;
 
     public Genre() {
     }
@@ -25,8 +25,8 @@ public class Genre {
         this.name = name;
     }
 
-    public long getId() {
-        return id;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,11 +37,11 @@ public class Genre {
         this.name = name;
     }
 
-    public List<EntertainmentType> getEntertainmentTypes() {
-        return entertainmentTypes;
+    public List<EventType> getEventTypes() {
+        return eventTypes;
     }
 
-    public void setEntertainmentTypes(List<EntertainmentType> entertainmentTypes) {
-        this.entertainmentTypes = entertainmentTypes;
+    public void setEventTypes(List<EventType> eventTypes) {
+        this.eventTypes = eventTypes;
     }
 }

@@ -1,23 +1,28 @@
 package com.giggle.controllers;
 
 import com.giggle.exceptions.BadRequestException;
-import com.giggle.exceptions.UnauthorisedRequestException;
-import com.giggle.exceptions.UserConflictException;
 import com.giggle.exceptions.NotFoundException;
+import com.giggle.exceptions.UserConflictException;
 import com.giggle.models.User;
+import com.giggle.models.UserRole;
 import com.giggle.repositories.UserRepository;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
-import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 /**
  * Created by Enda on 23/11/2015.
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController  {
 
     private final UserRepository repo;
@@ -27,31 +32,23 @@ public class UserController  {
         this.repo = repo;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/login")
-    public @ResponseBody User login(@RequestParam String username, @RequestParam String password) {
-
-        if (username == null || password == null)
+    @RequestMapping(method = POST, value = "/login")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public @ResponseBody User login(@RequestParam String username) {
+        if (username == null) {
             throw new BadRequestException();
+        }
 
-        User user = null;
-        // try and login with username field first
-        if (usernameExists(username)) {
-            user = repo.getUserWithUsername(username);
-        } else if (emailExists(username)) {
-            user = repo.getUserWithEmail(username);
-        } else {
+        User user = repo.getUserWithUsername(username);
+
+        if (user == null) {
             throw new NotFoundException();
         }
-
-        if (user != null && !checkPassword(password, user.getPassword())) {
-            throw new UnauthorisedRequestException(); // incorrect password for this user
-        } else {
-            return user; // success
-        }
-    }
+        return user;
+    }   
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/insert")
+    @RequestMapping(method = POST, value = "/insert", headers="Accept=application/xml, application/json, application/x-www-form-urlencoded")
     public @ResponseBody User insertUser(@RequestParam String username,
                                          @RequestParam String email,
                                          @RequestParam String password) {
@@ -74,30 +71,42 @@ public class UserController  {
         // create user
         User user = new User(username, email, hashedPassword);
 
+        // set role to default value -> user
+        List<UserRole> roles = new ArrayList<>();
+        roles.add(repo.getRoleByName("ROLE_USER"));
+        user.setRoles(roles);
+
         // insert user into database and retrieve updated object
         return repo.insertUser(user);
     }
 
-    private Timestamp timeStamp() {
-        return new Timestamp(System.currentTimeMillis());
-    }
-
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/id/{id}", method = GET)
+    @PreAuthorize("hasRole('ROLE_USER')")
     public @ResponseBody User getUserWithId(@PathVariable long id) {
         User user = repo.getUserWithId(id);
         if (user == null) throw new NotFoundException();
         return user;
     }
 
+    @RequestMapping(value = "/username", method = POST)
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public @ResponseBody User getUserWithUsername(@RequestParam String username) {
+        if (username == null) throw new BadRequestException();
 
-    @RequestMapping(value = "/emailexists", method = RequestMethod.GET)
+        User user = repo.getUserWithUsername(username);
+
+        if (user == null) throw new NotFoundException();
+        return user;
+    }
+
+    @RequestMapping(value = "/emailexists", method = GET)
     public boolean emailExists(@RequestParam("email") String email) {
         if (email == null) throw new BadRequestException();
         return repo.emailExists(email);
     }
 
-    @RequestMapping(value = "/usernameexists", method = RequestMethod.GET)
+    @RequestMapping(value = "/usernameexists", method = GET)
+    @PreAuthorize("permitAll")
     public boolean usernameExists(@RequestParam("username") String username) {
         if (username == null) throw new BadRequestException();
         return repo.usernameExists(username);
@@ -106,10 +115,6 @@ public class UserController  {
     private String hashPassword(String password) {
         String salt = BCrypt.gensalt(12);
         return BCrypt.hashpw(password, salt);
-    }
-
-    private boolean checkPassword(String password, String hashedPassword) {
-        return BCrypt.checkpw(password, hashedPassword);
     }
 
 }

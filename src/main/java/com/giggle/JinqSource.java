@@ -1,8 +1,6 @@
 package com.giggle;
 
-import com.giggle.models.Country;
-import com.giggle.models.County;
-import com.giggle.models.User;
+import com.giggle.models.*;
 import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.springframework.stereotype.Component;
@@ -33,6 +31,10 @@ public class JinqSource {
 
     public JPAJinqStream<User> users(EntityManager em) {
         return streams.streamAll(em, User.class);
+    }
+
+    public JPAJinqStream<UserRole> roles(EntityManager em) {
+        return streams.streamAll(em, UserRole.class);
     }
 
     public JPAJinqStream<Country> countries(EntityManager em) {

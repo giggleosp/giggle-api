@@ -39,9 +39,16 @@ public class CountryRepositoryImpl implements CountryRepository {
     @Override
     public List<County> allCountiesOfCountry(long id) {
         List<County> counties = source.counties(em)
-                .where(c -> c.getCountry()
-                        .getId() == id)
+                .where(c -> c.getCountry().getId() == id)
                 .toList();
         return counties.isEmpty() ? null : counties;
     }
+
+//    @Override
+//    public Country getCountryByName(String country) {
+//        List<Country> countries = source.countries(em)
+//                .where(c -> c.getNiceName().toLowerCase().equals(country.toLowerCase()))
+//                .toList();
+//        return countries.isEmpty() ? null : countries.get(0);
+//    }
 }

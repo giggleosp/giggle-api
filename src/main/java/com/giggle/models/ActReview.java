@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "entertainer_reviews")
+@Table(name = "act_reviews")
 public class ActReview {
 
     @Id
@@ -18,28 +18,22 @@ public class ActReview {
     @NotNull
     @Size(min = 1, max = 5)
     private int rating;
-    @Column(length = 1000)
     private String description;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "entertainer_id")
+    @ManyToOne
     private Act act;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "reviewed_by_id")
-    private User reviewedBy;
-    @NotNull
-    @Column(name = "date_created")
+    @ManyToOne
+    private User user;
     private Timestamp dateCreated;
-    @Column(name = "date_updated")
     private Timestamp dateUpdated;
 
     public ActReview() {
     }
 
-    public ActReview(int rating, Act act, User reviewedBy, Timestamp dateCreated) {
+    public ActReview(int rating, Act act, User user) {
         this.rating = rating;
         this.act = act;
-        this.reviewedBy = reviewedBy;
-        this.dateCreated = dateCreated;
+        this.user = user;
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
@@ -70,12 +64,12 @@ public class ActReview {
         this.act = act;
     }
 
-    public User getReviewedBy() {
-        return reviewedBy;
+    public User getUser() {
+        return user;
     }
 
-    public void setReviewedBy(User reviewedBy) {
-        this.reviewedBy = reviewedBy;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Timestamp getDateCreated() {

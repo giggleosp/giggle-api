@@ -1,6 +1,7 @@
 package com.giggle.repositories;
 
 import com.giggle.models.User;
+import com.giggle.models.UserRole;
 
 import javax.inject.Singleton;
 
@@ -15,5 +16,5 @@ public interface UserRepository {
     User insertUser(User user);
     User getUserWithId(long id);
     User getUserWithUsername(String username);
-    User getUserWithEmail(String email);
+    UserRole getRoleByName(String role);
 }

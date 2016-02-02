@@ -14,4 +14,5 @@ public interface CountryRepository {
     List<Country> allCountries();
     Country getCountryById(long id);
     List<County> allCountiesOfCountry(long id);
+//    Country getCountryByName(String country);
 }

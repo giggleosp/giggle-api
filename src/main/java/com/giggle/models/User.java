@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -24,14 +25,12 @@ public class User implements Serializable {
     @Column(length = 50)
     private String name;
     @NotNull
-    @Column(length = 50)
+    @Column(length = 30)
     private String username;
     @NotNull
     private String email;
-    @Column(name = "profile_picture")
-    private String profilePicture;
-    @Column(name = "profile_is_public")
-    private boolean profileIsPublic;
+    @Column(name = "image_uri")
+    private String imageUri;
     @Column(columnDefinition = "char(60)")
     @NotNull @JsonIgnore
     private String password;
@@ -52,18 +51,22 @@ public class User implements Serializable {
     private Timestamp dateCreated;
     @Column(name = "date_updated")
     private Timestamp dateUpdated;
-    private boolean enabled;
-    @ManyToMany
+    private boolean isEnabled;
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<UserRole> roles;
 
     public User() {
+    }
+
+    public User(User user) {
+        user.username = getUsername();
     }
 
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.enabled = true;
+        this.isEnabled = true;
         this.emailVerified = false;
         this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
@@ -96,20 +99,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getProfilePicture() {
-        return profilePicture;
+    public String getImageUri() {
+        return imageUri;
     }
 
-    public void setProfilePicture(String profilePicture) {
-        this.profilePicture = profilePicture;
-    }
-
-    public boolean isProfileIsPublic() {
-        return profileIsPublic;
-    }
-
-    public void setProfileIsPublic(boolean profileIsPublic) {
-        this.profileIsPublic = profileIsPublic;
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
     }
 
     public String getPassword() {
@@ -177,10 +172,19 @@ public class User implements Serializable {
     }
 
     public boolean isEnabled() {
-        return enabled;
+        return isEnabled;
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        isEnabled = enabled;
     }
+
+    public Collection<UserRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<UserRole> roles) {
+        this.roles = roles;
+    }
+
 }

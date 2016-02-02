@@ -1,7 +1,6 @@
 package com.giggle.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 /**
@@ -14,61 +13,34 @@ public class EventView {
     @Id
     @GeneratedValue
     private long id;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "event_id")
-    private Event event;
-    @ManyToOne
-    @JoinColumn(name = "viewer_id")
-    private User user;
-    @NotNull
-    private Timestamp timestamp;
+    private Timestamp time;
     private double latitude;
     private double longitude;
     @ManyToOne
-    @JoinColumn(name = "city_id")
-    private City city;
+    private User user;
     @ManyToOne
-    @JoinColumn(name = "county_id")
-    private County county;
-    @ManyToOne
-    @JoinColumn(name = "country_id")
-    private Country country;
+    private Event event;
 
     public EventView() {
+
     }
 
-    public EventView(Event event, User user, Timestamp timestamp) {
-        this.event = event;
+    public EventView(User user, Event event) {
         this.user = user;
-        this.timestamp = timestamp;
+        this.event = event;
+        this.time = new Timestamp(System.currentTimeMillis());
     }
 
     public long getId() {
         return id;
     }
 
-    public Event getEvent() {
-        return event;
+    public Timestamp getTime() {
+        return time;
     }
 
-    public void setEvent(Event event) {
-        this.event = event;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Timestamp getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setTime(Timestamp time) {
+        this.time = time;
     }
 
     public double getLatitude() {
@@ -87,27 +59,19 @@ public class EventView {
         this.longitude = longitude;
     }
 
-    public City getCity() {
-        return city;
+    public User getUser() {
+        return user;
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public County getCounty() {
-        return county;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setCounty(County county) {
-        this.county = county;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 }

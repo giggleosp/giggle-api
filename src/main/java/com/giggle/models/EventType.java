@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "entertainment_types", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
+@Table(name = "event_types")
 public class EventType {
 
     @Id
