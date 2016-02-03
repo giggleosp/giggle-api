@@ -48,7 +48,7 @@ public class UserController  {
     }   
 
 
-    @RequestMapping(method = POST, value = "/insert", headers="Accept=application/xml, application/json, application/x-www-form-urlencoded")
+    @RequestMapping(method = POST, value = "/insert")
     public @ResponseBody User insertUser(@RequestParam String username,
                                          @RequestParam String email,
                                          @RequestParam String password) {

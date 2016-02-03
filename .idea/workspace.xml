@@ -5,69 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21978614-0664-4926-b6b1-d76177ebd72c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/CsrfHeaderFilter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/Entertainer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/EntertainerFan.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/EntertainerReview.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/EntertainmentType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/VenueUser.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/Application.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/CORSFilter.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/CORSFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/JinqSource.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/JinqSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/controllers/CountryController.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/controllers/CountryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/controllers/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/Event.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/Event.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/EventUser.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/EventUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/EventView.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/EventView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/Genre.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/Genre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/Message.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/Message.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/User.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/UserRole.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/UserRole.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/Venue.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/Venue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/VenueReview.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/VenueReview.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/models/VenueType.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/models/VenueType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/repositories/CountryRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/repositories/CountryRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/repositories/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/repositories/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/giggle/repositories/UserRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/giggle/repositories/UserRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/giggle-api.iml" afterPath="$PROJECT_DIR$/giggle-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/CORSFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/CORSFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/JinqSource.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/JinqSource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/SecurityConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/SecurityConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/controllers/CountryController.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/controllers/CountryController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/Act.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/Act.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActReview.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActReview.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActType.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActView.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/ActView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/Event.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/EventType.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/EventType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/EventUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/EventUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/EventView.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/EventView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/Genre.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/Genre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/Message.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/UserRole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/UserVenue.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/UserVenue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/Venue.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/Venue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenuePictures.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenuePictures.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenueReview.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenueReview.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenueType.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenueType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenueView.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/models/VenueView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/CountryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/CountryRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/CountryRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/CountryRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/CustomUserDetailsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/CustomUserDetailsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/giggle/repositories/UserRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
     </list>
     <ignored path="giggle-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,6 +76,28 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="users" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - giggle@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="dev" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -149,67 +111,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
-              <folding>
-                <element signature="e#920#921#0" expanded="true" />
-                <element signature="e#952#953#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CsrfHeaderFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/CsrfHeaderFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.39313573">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/SecurityConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55070204">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="giggle.dev.users" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/62d07ab1/73e28b8b-5ee6-4447-908b-38d8917eeb9f/giggle.dev.users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CORSFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/CORSFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -237,6 +151,9 @@
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response9.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -290,8 +207,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/giggle/WebConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/giggle/CORSFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/giggle/SecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java" />
       </list>
     </option>
   </component>
@@ -487,9 +404,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,6 +430,142 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1454267453277" />
+                <option name="domain" value="localhost:9000" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="XSRF-TOKEN=b03f55f8-4362-4540-9f6f-58b893116db3" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="38BD47AA4AB2A4C15A93CC3D501EE07B" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/users/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Basic Zm9vYmFyNTowODc2MjM1NzE4ZXAh" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1454267453277" />
+                <option name="domain" value="localhost:9000" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="XSRF-TOKEN=b03f55f8-4362-4540-9f6f-58b893116db3" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="BB321780C2FA27CE83429614A82A878B" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/users/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Basic Zm9vYmFyNTowODc2MjM1NzE4ZXAh" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1454267453277" />
+                <option name="domain" value="localhost:9000" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="XSRF-TOKEN=b03f55f8-4362-4540-9f6f-58b893116db3" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="FA428F360CE9426ABB1708E907D13F99" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/users/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Basic Zm9vYmFyNTowODc2MjM1NzE4ZXAh" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1454267453277" />
+                <option name="domain" value="localhost:9000" />
+                <option name="name" value="XSRF-TOKEN" />
+                <option name="path" value="/" />
+                <option name="value" value="XSRF-TOKEN=b03f55f8-4362-4540-9f6f-58b893116db3" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="527FEB4D7E120549CDC31B6D90229904" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/users/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Basic cGhlbGFuMTk5MzowODc2MjM1NzE4ZXAh" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="biscuits">
             <list>
@@ -2328,190 +2381,6 @@
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="JSESSIONID" />
-                <option name="path" value="/" />
-                <option name="value" value="10B2D59AD12670E451B25AFB54C0A1E4" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="XSRF-TOKEN" />
-                <option name="path" value="/" />
-                <option name="value" value="80e5cc69-1fab-411d-8e0a-e5d2ddfdb0ae" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/users/test/27" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Authorization" />
-                <option name="value" value="Basic cGhlbGFuMTk5MzowODc2MjM1NzE4ZXAh" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="id" />
-                <option name="value" value="27" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="JSESSIONID" />
-                <option name="path" value="/" />
-                <option name="value" value="76EF7BADBF064A71747D0AC8C71D9458" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="XSRF-TOKEN" />
-                <option name="path" value="/" />
-                <option name="value" value="80e5cc69-1fab-411d-8e0a-e5d2ddfdb0ae" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/users/test" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Authorization" />
-                <option name="value" value="Basic cGhlbGFuMTk5MzowODc2MjM1NzE4ZXAh" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="id" />
-                <option name="value" value="27" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="JSESSIONID" />
-                <option name="path" value="/" />
-                <option name="value" value="76EF7BADBF064A71747D0AC8C71D9458" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="XSRF-TOKEN" />
-                <option name="path" value="/" />
-                <option name="value" value="80e5cc69-1fab-411d-8e0a-e5d2ddfdb0ae" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/users/test/27" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Authorization" />
-                <option name="value" value="Basic cGhlbGFuMTk5MzowODc2MjM1NzE4ZXAh" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="JSESSIONID" />
-                <option name="path" value="/" />
-                <option name="value" value="603CC8A8B2F5942AA7EE4ED7F05094CD" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="XSRF-TOKEN" />
-                <option name="path" value="/" />
-                <option name="value" value="80e5cc69-1fab-411d-8e0a-e5d2ddfdb0ae" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/users/test" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Authorization" />
-                <option name="value" value="Basic cGhlbGFuMTk5MzowODc2MjM1NzE4ZXAh" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -3043,12 +2912,13 @@
       <workItem from="1454414983570" duration="527000" />
       <workItem from="1454415639129" duration="6886000" />
       <workItem from="1454432727722" duration="865000" />
-      <workItem from="1454433698041" duration="6583000" />
+      <workItem from="1454433698041" duration="6732000" />
+      <workItem from="1454494957479" duration="2892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247967000" />
+    <option name="totallyTimeSpent" value="251008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
@@ -3058,10 +2928,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32179227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47777778" sideWeight="0.5080527" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47761193" sideWeight="0.5080527" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38507462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.4919473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.017910447" sideWeight="0.4919473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3072,13 +2943,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.49266863" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41492537" sideWeight="0.49266863" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30833334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -3123,7 +2993,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="123" />
+      <option name="time" value="127" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -3132,13 +3002,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/models/Act.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3806078">
-          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/models/ActType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3487699">
@@ -3604,7 +3467,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3613,18 +3478,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
-          <folding>
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3633,6 +3487,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.2.3.RELEASE/spring-aop-4.2.3.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.607143">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3650,10 +3520,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/SecurityConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/giggle/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55070204">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.39313573">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding />
         </state>
       </provider>
