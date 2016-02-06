@@ -33,7 +33,6 @@ public class UserController  {
     }
 
     @RequestMapping(method = POST, value = "/login")
-    @PreAuthorize("hasRole('ROLE_USER')")
     public @ResponseBody User login(@RequestParam String username) {
         if (username == null) {
             throw new BadRequestException();
@@ -48,7 +47,7 @@ public class UserController  {
     }   
 
 
-    @RequestMapping(method = POST, value = "/insert")
+    @RequestMapping(method = POST, value = "/signup")
     public @ResponseBody User insertUser(@RequestParam String username,
                                          @RequestParam String email,
                                          @RequestParam String password) {
@@ -106,12 +105,11 @@ public class UserController  {
     }
 
     @RequestMapping(value = "/usernameexists", method = GET)
-    @PreAuthorize("permitAll")
     public boolean usernameExists(@RequestParam("username") String username) {
         if (username == null) throw new BadRequestException();
         return repo.usernameExists(username);
     }
-    
+
     private String hashPassword(String password) {
         String salt = BCrypt.gensalt(12);
         return BCrypt.hashpw(password, salt);

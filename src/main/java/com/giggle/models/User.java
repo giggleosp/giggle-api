@@ -1,7 +1,6 @@
 package com.giggle.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,7 +13,6 @@ import java.util.List;
 /**
  * Created by Enda on 04/11/2015.
  */
-@JsonDeserialize(builder=User.class)
 @Entity
 @Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = {"email", "username"}))
 public class User implements Serializable {
