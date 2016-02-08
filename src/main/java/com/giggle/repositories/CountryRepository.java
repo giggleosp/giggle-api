@@ -1,5 +1,6 @@
 package com.giggle.repositories;
 
+import com.giggle.models.City;
 import com.giggle.models.Country;
 import com.giggle.models.County;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public interface CountryRepository {
     List<Country> allCountries();
     Country getCountryById(long id);
-    List<County> allCountiesOfCountry(long id);
-//    Country getCountryByName(String country);
+    List<County> getCountiesForCountry(long id);
+    County getCountyById(long id);
+    List<City> getCitiesForCounty(long id);
 }

@@ -1,7 +1,8 @@
 package com.giggle.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * Created by Enda on 18/11/2015.
@@ -14,8 +15,8 @@ public class City {
     @GeneratedValue
     private long id;
     private String name;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "county_id") @NotNull
+    @ManyToOne
+    @JsonIgnore
     private County county;
 
     public City() {

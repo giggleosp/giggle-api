@@ -18,7 +18,6 @@ public class County {
     @NotNull
     private String name;
     @ManyToOne
-    @JoinColumn(name = "country_id")
     @JsonIgnore
     private Country country;
 

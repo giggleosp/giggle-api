@@ -17,4 +17,5 @@ public interface UserRepository {
     User getUserWithId(long id);
     User getUserWithUsername(String username);
     UserRole getRoleByName(String role);
+    User updateUser(User user);
 }

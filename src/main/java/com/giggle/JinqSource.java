@@ -44,4 +44,8 @@ public class JinqSource {
     public JPAJinqStream<County> counties(EntityManager em) {
         return streams.streamAll(em, County.class);
     }
+
+    public JPAJinqStream<City> cities(EntityManager em) {
+        return streams.streamAll(em, City.class);
+    }
 }

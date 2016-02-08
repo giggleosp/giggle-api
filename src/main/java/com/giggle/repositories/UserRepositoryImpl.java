@@ -78,4 +78,10 @@ public class UserRepositoryImpl implements UserRepository {
         return roles.size() < 1 ? null : roles.get(0);
     }
 
+    @Override
+    @Transactional
+    public User updateUser(User user) {
+        return em.merge(user);
+    }
+
 }

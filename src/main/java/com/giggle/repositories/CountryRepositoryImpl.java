@@ -1,6 +1,7 @@
 package com.giggle.repositories;
 
 import com.giggle.JinqSource;
+import com.giggle.models.City;
 import com.giggle.models.Country;
 import com.giggle.models.County;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,18 +38,27 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public List<County> allCountiesOfCountry(long id) {
+    public List<County> getCountiesForCountry(long id) {
         List<County> counties = source.counties(em)
                 .where(c -> c.getCountry().getId() == id)
                 .toList();
         return counties.isEmpty() ? null : counties;
     }
 
-//    @Override
-//    public Country getCountryByName(String country) {
-//        List<Country> countries = source.countries(em)
-//                .where(c -> c.getNiceName().toLowerCase().equals(country.toLowerCase()))
-//                .toList();
-//        return countries.isEmpty() ? null : countries.get(0);
-//    }
+    @Override
+    public County getCountyById(long id) {
+        List<County> counties = source.counties(em)
+                .where(c -> c.getId() == id)
+                .toList();
+        return counties.isEmpty() ? null : counties.get(0);
+    }
+
+    @Override
+    public List<City> getCitiesForCounty(long id) {
+        List<City> cities = source.cities(em)
+                .where(c -> c.getCounty().getId() == id)
+                .toList();
+        return cities.isEmpty() ? null : cities;
+    }
+
 }

@@ -11,12 +11,11 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * Created by Enda on 23/11/2015.
@@ -48,9 +47,7 @@ public class UserController  {
 
 
     @RequestMapping(method = POST, value = "/signup")
-    public @ResponseBody User insertUser(@RequestParam String username,
-                                         @RequestParam String email,
-                                         @RequestParam String password) {
+    public @ResponseBody User insertUser(@RequestParam String username, @RequestParam String email, @RequestParam String password) {
 
         // missing parameter(s)
         if (username == null || email == null || password == null)
@@ -87,8 +84,58 @@ public class UserController  {
         return user;
     }
 
+    @RequestMapping(value = "/update", method = PUT)
+    public @ResponseBody User updateUser(@RequestBody User newUser) {
+        if (newUser == null) throw new BadRequestException();
+
+        User user = repo.getUserWithId(newUser.getId());
+
+        if (user == null) throw new NotFoundException();
+
+        //region COMPARE PROPERTIES
+        // check all properties for change and update
+        boolean changed = false; // watch for change
+        if (!user.getFirstName().equals(newUser.getFirstName())) {
+            user.setFirstName(newUser.getFirstName());
+            changed = true;
+        }
+        if (!user.getLastName().equals(newUser.getLastName())) {
+            user.setLastName(newUser.getLastName());
+            changed = true;
+        }
+        if (!user.getDateOfBirth().equals(newUser.getDateOfBirth())) {
+            user.setDateOfBirth(newUser.getDateOfBirth());
+            changed = true;
+        }
+        if (user.getCountry().getId() != newUser.getCountry().getId()) {
+            user.setCountry(newUser.getCountry());
+            changed = true;
+        }
+        if (user.getCounty().getId() != newUser.getCounty().getId()) {
+            user.setCounty(newUser.getCounty());
+            changed = true;
+        }
+        if (user.getCity().getId() != newUser.getCity().getId()) {
+            user.setCity(newUser.getCity());
+            changed = true;
+        }
+        //endregion
+
+        // perform update and return response;
+        if (changed) {
+            user.setDateUpdated(timeStamp());
+            return repo.updateUser(user);
+        } else {
+            return user;
+        }
+
+    }
+
+    private Timestamp timeStamp() {
+        return new Timestamp(System.currentTimeMillis());
+    }
+
     @RequestMapping(value = "/username", method = POST)
-    @PreAuthorize("hasRole('ROLE_USER')")
     public @ResponseBody User getUserWithUsername(@RequestParam String username) {
         if (username == null) throw new BadRequestException();
 
