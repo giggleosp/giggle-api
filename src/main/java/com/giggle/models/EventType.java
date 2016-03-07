@@ -1,37 +1,25 @@
 package com.giggle.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "event_types")
-public class EventType {
+@Table(name = "event_types", indexes = { @Index(name = "IDX_ACTX1", columnList = "id, name")})
+public class EventType implements Serializable {
 
     @Id
     @GeneratedValue
-    private long id;
+    @Getter @Setter private long id;
     @NotNull
-    private String name;
+    @Getter @Setter private String name;
 
     public EventType() {
-    }
-
-    public EventType(String name) {
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

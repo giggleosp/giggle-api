@@ -1,4 +1,4 @@
-package com.giggle.repositories;
+package com.giggle.repositories.country;
 
 import com.giggle.models.City;
 import com.giggle.models.Country;

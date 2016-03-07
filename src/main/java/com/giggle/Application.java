@@ -1,6 +1,7 @@
 package com.giggle;
 
-import com.giggle.repositories.CustomUserDetailsService;
+import com.giggle.repositories.user.CustomUserDetailsService;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -21,12 +22,24 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.inject.Inject;
+import java.io.File;
 
 @SpringBootApplication
 public class Application {
 
+    public static String IMAGES_DIRECTORY = "src"
+            + File.separator + "main"
+            + File.separator + "resources"
+            + File.separator + "images";
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+    }
+
+    @Bean
+    CommandLineRunner init() {
+        return (String[] args) ->
+                new File(IMAGES_DIRECTORY).mkdir();
     }
 
     @Bean
@@ -37,7 +50,6 @@ public class Application {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:9000")
                         .allowedMethods("GET", "PUT", "DELETE", "POST", "OPTIONS")
-                        .exposedHeaders("")
                         .allowedHeaders("Origin", "Content-Type", "Authorization", "Accept", "X-Requested-With", "X-XSRF-TOKEN")
                         .allowCredentials(true)
                         .maxAge(3600);

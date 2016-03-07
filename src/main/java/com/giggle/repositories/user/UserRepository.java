@@ -1,4 +1,4 @@
-package com.giggle.repositories;
+package com.giggle.repositories.user;
 
 import com.giggle.models.User;
 import com.giggle.models.UserRole;
@@ -8,7 +8,6 @@ import javax.inject.Singleton;
 /**
  * Created by Enda on 22/11/2015.
  */
-
 @Singleton
 public interface UserRepository {
     boolean emailExists(String email);

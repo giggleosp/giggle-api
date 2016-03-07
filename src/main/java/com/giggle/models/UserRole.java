@@ -1,5 +1,7 @@
 package com.giggle.models;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -13,32 +15,14 @@ public class UserRole implements GrantedAuthority {
 
     @Id
     @GeneratedValue
-    private long id;
+    @Getter @Setter private long id;
     @Column(unique = true)
-    private String name;
-
-    public UserRole() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Setter private String authority;
+    @Getter @Setter private String displayName;
 
     @Override
     public String getAuthority() {
-        return name.toUpperCase();
+        return authority.toUpperCase();
     }
 
 }

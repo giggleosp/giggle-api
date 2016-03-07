@@ -2,10 +2,10 @@ package com.giggle.controllers;
 
 import com.giggle.exceptions.BadRequestException;
 import com.giggle.exceptions.NotFoundException;
-import com.giggle.exceptions.UserConflictException;
+import com.giggle.exceptions.ConflictException;
 import com.giggle.models.User;
 import com.giggle.models.UserRole;
-import com.giggle.repositories.UserRepository;
+import com.giggle.repositories.user.UserRepository;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +14,7 @@ import javax.inject.Inject;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
@@ -55,11 +56,11 @@ public class UserController  {
 
         // check if username already exists in database
         if (usernameExists(username))
-            throw new UserConflictException("username", username);
+            throw new ConflictException();
 
         // check if email already exists in database
         if (emailExists(email))
-            throw new UserConflictException("email", email);
+            throw new ConflictException();
 
         // create a hashed password
         String hashedPassword = hashPassword(password);
@@ -95,27 +96,27 @@ public class UserController  {
         //region COMPARE PROPERTIES
         // check all properties for change and update
         boolean changed = false; // watch for change
-        if (!user.getFirstName().equals(newUser.getFirstName())) {
+        if (newUser.getFirstName() != null && !Objects.equals(user.getFirstName(), newUser.getFirstName())) {
             user.setFirstName(newUser.getFirstName());
             changed = true;
         }
-        if (!user.getLastName().equals(newUser.getLastName())) {
+        if (newUser.getLastName() != null && !Objects.equals(user.getLastName(), newUser.getLastName())) {
             user.setLastName(newUser.getLastName());
             changed = true;
         }
-        if (!user.getDateOfBirth().equals(newUser.getDateOfBirth())) {
+        if (user.getDateOfBirth() != newUser.getDateOfBirth()) {
             user.setDateOfBirth(newUser.getDateOfBirth());
             changed = true;
         }
-        if (user.getCountry().getId() != newUser.getCountry().getId()) {
+        if (newUser.getCountry() != null && user.getCountry() != newUser.getCountry()) {
             user.setCountry(newUser.getCountry());
             changed = true;
         }
-        if (user.getCounty().getId() != newUser.getCounty().getId()) {
+        if (newUser.getCounty() != null && user.getCounty() != newUser.getCounty()) {
             user.setCounty(newUser.getCounty());
             changed = true;
         }
-        if (user.getCity().getId() != newUser.getCity().getId()) {
+        if (newUser.getCity() != null && user.getCity() != newUser.getCity()) {
             user.setCity(newUser.getCity());
             changed = true;
         }

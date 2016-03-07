@@ -48,4 +48,30 @@ public class JinqSource {
     public JPAJinqStream<City> cities(EntityManager em) {
         return streams.streamAll(em, City.class);
     }
+
+    public JPAJinqStream<Venue> venues(EntityManager em) {
+        return streams.streamAll(em, Venue.class);
+    }
+
+    public JPAJinqStream<VenueType> venueTypes(EntityManager em) { return streams.streamAll(em, VenueType.class); }
+
+    public JPAJinqStream<UserVenue> userVenues(EntityManager em) {
+        return streams.streamAll(em, UserVenue.class);
+    }
+
+    public JPAJinqStream<ActUser> actUsers(EntityManager em) {
+        return streams.streamAll(em, ActUser.class);
+    }
+
+    public JPAJinqStream<Act> acts(EntityManager em) {
+        return streams.streamAll(em, Act.class);
+    }
+
+    public JPAJinqStream<Event> events(EntityManager em) {
+        return streams.streamAll(em, Event.class);
+    }
+
+    public JPAJinqStream<EventType> eventTypes(EntityManager em) {
+        return streams.streamAll(em, EventType.class);
+    }
 }

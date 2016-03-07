@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "act_reviews")
+@Table(name = "act_reviews", indexes = { @Index(name = "IDX_ACT_REVIEWX1", columnList = "id")})
 public class ActReview {
 
     @Id

@@ -1,5 +1,7 @@
 package com.giggle.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
@@ -15,8 +17,10 @@ public class UserVenue {
     @GeneratedValue
     private long id;
     @ManyToOne @NotNull
+    @JsonIgnore
     private User user;
     @ManyToOne @NotNull
+    @JsonIgnore
     private Venue venue;
     private boolean isFollowing;
     private boolean isHidden;

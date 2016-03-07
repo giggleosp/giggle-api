@@ -3,13 +3,14 @@ package com.giggle.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Enda on 18/11/2015.
  */
 @Entity
 @Table(name = "cities")
-public class City {
+public class City implements Serializable {
 
     @Id
     @GeneratedValue

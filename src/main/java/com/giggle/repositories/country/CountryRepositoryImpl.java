@@ -1,9 +1,10 @@
-package com.giggle.repositories;
+package com.giggle.repositories.country;
 
 import com.giggle.JinqSource;
 import com.giggle.models.City;
 import com.giggle.models.Country;
 import com.giggle.models.County;
+import com.giggle.repositories.country.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

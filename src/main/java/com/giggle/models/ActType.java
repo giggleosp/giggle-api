@@ -1,15 +1,12 @@
 package com.giggle.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by enda on 20/01/16.
  */
 @Entity
-@Table(name = "act_types")
+@Table(name = "act_types", indexes = { @Index(name = "IDX_ACT_TYPEX1", columnList = "id, name")})
 public class ActType {
 
     @Id

@@ -1,4 +1,4 @@
-package com.giggle.repositories;
+package com.giggle.repositories.user;
 
 import com.giggle.exceptions.NotFoundException;
 import com.giggle.models.User;

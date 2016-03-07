@@ -5,7 +5,7 @@ import com.giggle.exceptions.NotFoundException;
 import com.giggle.models.City;
 import com.giggle.models.Country;
 import com.giggle.models.County;
-import com.giggle.repositories.CountryRepository;
+import com.giggle.repositories.country.CountryRepository;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;

@@ -1,5 +1,8 @@
 package com.giggle.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,36 +15,13 @@ public class Genre {
 
     @Id
     @GeneratedValue
-    private long id;
+    @Getter @Setter private long id;
     @Column(unique = true, nullable = false)
-    private String name;
+    @Getter @Setter private String name;
     @ManyToMany
-    private List<EventType> eventTypes;
+    @Getter @Setter private List<EventType> eventTypes;
 
     public Genre() {
     }
 
-    public Genre(String name) {
-        this.name = name;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<EventType> getEventTypes() {
-        return eventTypes;
-    }
-
-    public void setEventTypes(List<EventType> eventTypes) {
-        this.eventTypes = eventTypes;
-    }
 }

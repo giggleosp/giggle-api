@@ -1,4 +1,4 @@
-package com.giggle.repositories;
+package com.giggle.repositories.user;
 
 import com.giggle.JinqSource;
 import com.giggle.models.User;
@@ -71,7 +71,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public UserRole getRoleByName(String role) {
         List<UserRole> roles = source.roles(em)
-                .where(r -> r.getName().toUpperCase()
+                .where(r -> r.getAuthority()
                         .equals(role.toUpperCase()))
                 .toList();
 

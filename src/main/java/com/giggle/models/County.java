@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * Created by Enda on 18/11/2015.
  */
 @Entity
 @Table(name = "counties", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
-public class County {
+public class County implements Serializable {
 
     @Id
     @GeneratedValue
