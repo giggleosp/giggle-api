@@ -6,6 +6,7 @@ import com.giggle.exceptions.NotFoundException;
 import com.giggle.helpers.StringGenerator;
 import com.giggle.models.Event;
 import com.giggle.models.EventType;
+import com.giggle.models.EventUser;
 import com.giggle.models.User;
 import com.giggle.repositories.event.EventRepository;
 import org.springframework.web.bind.annotation.*;
@@ -32,25 +33,54 @@ public class EventController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public @ResponseBody Event addEvent(@RequestPart Event event, @RequestPart(required = false) MultipartFile photo) {
-        if (eventExists(event)) {
-            throw new ConflictException();
+    public @ResponseBody long addEvent(
+            @RequestPart Event event, @RequestPart User user,
+            @RequestPart(required = false) MultipartFile photo) {
+
+        if (event.getAct() != null && event.getVenue() != null && eventExists(event)) {
+            throw new ConflictException("This event has already been created.");
         } else {
             if (photo != null)
                 event.setImageUri(uploadPhoto(photo));
 
             event.setDateCreated(new Timestamp(System.currentTimeMillis()));
-            return repo.addEvent(event);
+
+            event = repo.addEvent(event);
+
+            EventUser eventUser = new EventUser(event, user);
+            eventUser.setAdmin(true);
+            repo.addEventUser(eventUser);
+
+            return event.getId();
         }
     }
 
-    private boolean eventExists(Event event) {
-        return repo.eventExists(event);
+    @RequestMapping(value = "event/{id}", method = RequestMethod.GET)
+    public @ResponseBody Event getEventWithId(@PathVariable long id) {
+        Event event = repo.getEventWithId(id);
+
+        if (event == null) {
+            throw new NotFoundException();
+        }
+
+        return event;
     }
 
-    @RequestMapping(value = "recommended", method = RequestMethod.POST)
-    public @ResponseBody List<Event> getRecommendedEvents(@RequestBody User user) {
-        List<Event> events = repo.getRecommendedEvents(user);
+    @RequestMapping(value = "event/{eventId}/user/{userId}", method = RequestMethod.GET)
+    public @ResponseBody EventUser getEventUserRelationship(@PathVariable long eventId,
+                                                            @PathVariable long userId) {
+        EventUser eventUser = repo.getEventUserRelationship(eventId, userId);
+
+        if(eventUser == null) {
+            throw new NotFoundException();
+        }
+
+        return eventUser;
+    }
+
+    @RequestMapping(value = "all", method = RequestMethod.GET)
+    public @ResponseBody List<Event> getEvents() {
+        List<Event> events = repo.getEvents();
 
         if (events == null)
             throw new NotFoundException();
@@ -71,6 +101,7 @@ public class EventController {
 
     public String uploadPhoto(MultipartFile photo) {
         String fileName = StringGenerator.generateString();
+        fileName += ".png";
 
         if (!photo.isEmpty()) {
             try {
@@ -94,5 +125,9 @@ public class EventController {
             }
         }
         return "images/events/" + fileName;
+    }
+
+    private boolean eventExists(Event event) {
+        return repo.eventExists(event);
     }
 }

@@ -7,8 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
 import java.sql.Timestamp;
 
 /**
@@ -24,6 +22,7 @@ public class Event implements Serializable {
     @Getter @Setter private boolean isEnabled;
     @ManyToOne @NotNull
     @Getter @Setter private EventType type;
+    @Column(columnDefinition = "TEXT")
     @Getter @Setter private String description;
     @Getter @Setter private String backdropUri;
     @Getter @Setter private String imageUri;
@@ -33,10 +32,10 @@ public class Event implements Serializable {
     @Getter @Setter private Venue venue;
     @ManyToOne
     @Getter @Setter private Event parentEvent;
-    @Getter @Setter private Date startDate;
-    @Getter @Setter private Time startTime;
-    @Getter @Setter private Date endDate;
-    @Getter @Setter private Time endTime;
+    @Getter @Setter private Timestamp startDate;
+    @Getter @Setter private Timestamp startTime;
+    @Getter @Setter private Timestamp endDate;
+    @Getter @Setter private Timestamp endTime;
     @Getter @Setter private float price;
     @Max(150)
     @Getter @Setter private int minimumAge;
@@ -51,6 +50,7 @@ public class Event implements Serializable {
 
     public Event(String name) {
         this.name = name;
+        this.isEnabled = true;
         this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 

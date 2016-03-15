@@ -108,6 +108,19 @@ public class EventRepositoryImpl implements EventRepository {
     }
 
     @Override
+    public Event getEventWithId(long id) {
+        List<Event> events = source.events(em)
+                .where(e -> e.getId() == id)
+                .toList();
+        return events.isEmpty() ? null : events.get(0);
+    }
+
+    @Override @Transactional
+    public void addEventUser(EventUser eventUser) {
+        em.persist(eventUser);
+    }
+
+    @Override
     public boolean eventExists(Event event) {
         List<Event> events =
                 source.events(em)
@@ -116,5 +129,16 @@ public class EventRepositoryImpl implements EventRepository {
                         .filter(e -> e.getStartDate().equals(event.getStartDate()))
                 .collect(Collectors.toList());
         return !events.isEmpty();
+    }
+
+    @Override
+    public EventUser getEventUserRelationship(long eventId, long userId) {
+        List<EventUser> results =
+                source.eventUsers(em)
+                        .where(e -> e.getEvent().getId() == eventId)
+                        .where(e -> e.getUser().getId() == userId)
+                        .toList();
+
+        return results.isEmpty() ? null : results.get(0);
     }
 }

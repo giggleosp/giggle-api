@@ -1,6 +1,12 @@
 package com.giggle.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
@@ -15,8 +21,10 @@ public class EventUser {
     @GeneratedValue
     private long id;
     @NotNull @ManyToOne
+    @JsonIgnore
     private User user;
-    @NotNull @ManyToOne
+    @NotNull @ManyToOne @Cascade(CascadeType.DELETE)
+    @JsonIgnore
     private Event event;
     private boolean isFollowing;
     private boolean isAttending;
@@ -28,7 +36,7 @@ public class EventUser {
     public EventUser() {
     }
 
-    public EventUser(User user, Event event) {
+    public EventUser(Event event, User user) {
         this.user = user;
         this.event = event;
         this.dateCreated = new Timestamp(System.currentTimeMillis());

@@ -71,6 +71,10 @@ public class JinqSource {
         return streams.streamAll(em, Event.class);
     }
 
+    public JPAJinqStream<EventUser> eventUsers(EntityManager em) {
+        return streams.streamAll(em, EventUser.class);
+    }
+
     public JPAJinqStream<EventType> eventTypes(EntityManager em) {
         return streams.streamAll(em, EventType.class);
     }

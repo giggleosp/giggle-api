@@ -15,7 +15,7 @@ import java.util.List;
  * Created by enda on 01/03/16.
  */
 @RestController
-@RequestMapping("/acts")
+@RequestMapping("/acts/")
 public class ActController {
 
     private final ActRepository repo;

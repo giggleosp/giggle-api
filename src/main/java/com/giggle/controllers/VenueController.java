@@ -28,17 +28,12 @@ public class VenueController {
 
     private final VenueRepository repo;
 
-    @Inject
-    public VenueController(VenueRepository repo) {
+    @Inject public VenueController(VenueRepository repo) {
         this.repo = repo;
     }
 
     @RequestMapping(value = "/managed_by", method = GET)
     public @ResponseBody List<Venue> getVenuesManagedByUser(@RequestParam long id) {
-        if (id == 0) {
-            throw new BadRequestException();
-        }
-
         List<Venue> venues = repo.getVenuesManagedByUser(id);
 
         if (venues == null) {
@@ -50,10 +45,6 @@ public class VenueController {
 
     @RequestMapping(value = "/{id}", method = GET)
     public @ResponseBody Venue getVenueById(@PathVariable long id) {
-        if (id == 0) {
-            throw new BadRequestException();
-        }
-
         Venue venue = repo.getVenueById(id);
 
         if (venue == null) {
@@ -101,8 +92,8 @@ public class VenueController {
     }
 
     @RequestMapping(value = "/venue/{venueId}/user/{userId}", method = GET)
-    public @ResponseBody UserVenue getUserVenueRelationship(@PathVariable("venueId") long venueId,
-                                                            @PathVariable("userId") long userId) {
+    public @ResponseBody UserVenue getUserVenueRelationship(@PathVariable long venueId,
+                                                            @PathVariable long userId) {
 
         UserVenue userVenue = repo.getUserVenueRelationship(venueId, userId);
 
