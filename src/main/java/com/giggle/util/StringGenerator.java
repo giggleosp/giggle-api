@@ -1,4 +1,4 @@
-package com.giggle.helpers;
+package com.giggle.util;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
