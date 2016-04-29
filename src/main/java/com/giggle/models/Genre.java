@@ -1,27 +1,33 @@
 package com.giggle.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by Enda on 18/11/2015.
  */
 @Entity
-@Table(name = "genres")
+@Table(name = "genres", indexes = { @Index(name = "IDX_GENREX1", columnList = "id, name")})
 public class Genre {
 
     @Id
     @GeneratedValue
-    @Getter @Setter private long id;
+    private long id;
     @Column(unique = true, nullable = false)
-    @Getter @Setter private String name;
-    @ManyToMany
-    @Getter @Setter private List<EventType> eventTypes;
+    private String name;
 
-    public Genre() {
+    public long getId() {
+        return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

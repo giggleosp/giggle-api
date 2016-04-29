@@ -1,7 +1,8 @@
-package com.giggle.repositories.user;
+package com.giggle.security;
 
 import com.giggle.exceptions.NotFoundException;
 import com.giggle.models.User;
+import com.giggle.repositories.user.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,7 +16,6 @@ import java.util.Collection;
  * Created by enda on 23/01/16.
  */
 
-// TODO: https://github.com/royclarkson/spring-rest-service-oauth/blob/master/src/main/java/hello/CustomUserDetailsService.java
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 

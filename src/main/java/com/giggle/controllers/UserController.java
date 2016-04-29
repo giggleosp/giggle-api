@@ -1,8 +1,8 @@
 package com.giggle.controllers;
 
 import com.giggle.exceptions.BadRequestException;
-import com.giggle.exceptions.NotFoundException;
 import com.giggle.exceptions.ConflictException;
+import com.giggle.exceptions.NotFoundException;
 import com.giggle.models.User;
 import com.giggle.models.UserRole;
 import com.giggle.repositories.user.UserRepository;
@@ -34,10 +34,6 @@ public class UserController  {
 
     @RequestMapping(method = POST, value = "/login")
     public @ResponseBody User login(@RequestParam String username) {
-        if (username == null) {
-            throw new BadRequestException();
-        }
-
         User user = repo.getUserWithUsername(username);
 
         if (user == null) {
@@ -45,7 +41,6 @@ public class UserController  {
         }
         return user;
     }   
-
 
     @RequestMapping(method = POST, value = "/signup")
     public @ResponseBody User insertUser(@RequestParam String username, @RequestParam String email, @RequestParam String password) {
@@ -86,9 +81,8 @@ public class UserController  {
     }
 
     @RequestMapping(value = "/update", method = PUT)
+    @PreAuthorize("hasRole('ROLE_USER')")
     public @ResponseBody User updateUser(@RequestBody User newUser) {
-        if (newUser == null) throw new BadRequestException();
-
         User user = repo.getUserWithId(newUser.getId());
 
         if (user == null) throw new NotFoundException();

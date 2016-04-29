@@ -1,7 +1,5 @@
 package com.giggle.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -17,7 +15,6 @@ public class City implements Serializable {
     private long id;
     private String name;
     @ManyToOne
-    @JsonIgnore
     private County county;
 
     public City() {

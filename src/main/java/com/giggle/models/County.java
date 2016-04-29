@@ -1,7 +1,5 @@
 package com.giggle.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -13,22 +11,12 @@ import java.io.Serializable;
 @Table(name = "counties", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
 public class County implements Serializable {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private long id;
     @NotNull
     private String name;
     @ManyToOne
-    @JsonIgnore
     private Country country;
-
-    public County() {
-    }
-
-    public County(String name, Country country) {
-        this.name = name;
-        this.country = country;
-    }
 
     public long getId() {
         return id;

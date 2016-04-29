@@ -6,6 +6,7 @@ import com.giggle.models.Venue;
 import com.giggle.models.VenueType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,6 +24,13 @@ public class VenueRepositoryImpl implements VenueRepository {
 
     @Autowired
     private JinqSource source;
+
+    @Override
+    public List<Venue> getVenues() {
+        List<Venue> venues = source.venues(em)
+                .toList();
+        return venues.isEmpty() ? null : venues;
+    }
 
     @Override
     public List<Venue> getVenuesManagedByUser(long id) {
@@ -70,5 +78,12 @@ public class VenueRepositoryImpl implements VenueRepository {
                 .toList();
 
         return userVenueList.isEmpty() ? null : userVenueList.get(0);
+    }
+
+    @Override
+    @Transactional
+    public Venue updateVenue(Venue venue) {
+        em.merge(venue);
+        return venue;
     }
 }

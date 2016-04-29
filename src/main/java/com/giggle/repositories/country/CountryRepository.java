@@ -17,4 +17,5 @@ public interface CountryRepository {
     List<County> getCountiesForCountry(long id);
     County getCountyById(long id);
     List<City> getCitiesForCounty(long id);
+    List<City> getCities();
 }

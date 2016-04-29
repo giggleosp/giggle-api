@@ -7,7 +7,7 @@ import java.util.List;
  * Created by enda on 20/01/16.
  */
 @Entity
-@Table(name = "act_types", indexes = { @Index(name = "IDX_ACT_TYPEX1", columnList = "id, name")})
+@Table(name = "act_categories", indexes = { @Index(name = "IDX_ACT_CATEGORIESX1", columnList = "id, name")})
 public class ActCategory {
 
     @Id
@@ -15,7 +15,9 @@ public class ActCategory {
     private long id;
     private String name;
     @OneToMany
-    private List<ActType> categories;
+    private List<ActType> types;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Genre> genres;
 
     public ActCategory() {
     }
@@ -40,11 +42,19 @@ public class ActCategory {
         this.id = id;
     }
 
-    public List<ActType> getCategories() {
-        return categories;
+    public List<ActType> getTypes() {
+        return types;
     }
 
-    public void setCategories(List<ActType> categories) {
-        this.categories = categories;
+    public void setTypes(List<ActType> types) {
+        this.types = types;
+    }
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
     }
 }

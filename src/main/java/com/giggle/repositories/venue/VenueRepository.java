@@ -12,10 +12,12 @@ import java.util.List;
  */
 @Singleton
 public interface VenueRepository {
+    List<Venue> getVenues();
     List<Venue> getVenuesManagedByUser(long id);
     Venue getVenueById(long id);
     List<VenueType> venueTypes();
     Venue createVenue(Venue venue);
     void createUserVenueRelationship(UserVenue userVenue);
     UserVenue getUserVenueRelationship(long venueId, long userId);
+    Venue updateVenue(Venue venue);
 }

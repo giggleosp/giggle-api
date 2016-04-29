@@ -37,6 +37,10 @@ public class JinqSource {
         return streams.streamAll(em, UserRole.class);
     }
 
+    public JPAJinqStream<Genre> genres(EntityManager em) {
+        return streams.streamAll(em, Genre.class);
+    }
+
     public JPAJinqStream<Country> countries(EntityManager em) {
         return streams.streamAll(em, Country.class);
     }
@@ -58,6 +62,8 @@ public class JinqSource {
     public JPAJinqStream<UserVenue> userVenues(EntityManager em) {
         return streams.streamAll(em, UserVenue.class);
     }
+
+    public JPAJinqStream<ActCategory> actCategories(EntityManager em) { return streams.streamAll(em, ActCategory.class); }
 
     public JPAJinqStream<ActUser> actUsers(EntityManager em) {
         return streams.streamAll(em, ActUser.class);

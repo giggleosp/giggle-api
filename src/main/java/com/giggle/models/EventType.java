@@ -1,8 +1,5 @@
 package com.giggle.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -16,10 +13,26 @@ public class EventType implements Serializable {
 
     @Id
     @GeneratedValue
-    @Getter @Setter private long id;
+    private long id;
     @NotNull
-    @Getter @Setter private String name;
+    private String name;
 
     public EventType() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -25,6 +25,12 @@ public class ActUser {
     private Timestamp dateUpdated;
 
     public ActUser() {
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
+    }
+
+    public ActUser(User user, Act act) {
+        this.user = user;
+        this.act = act;
     }
 
     public ActUser(User user, Act act, boolean isFollowing) {

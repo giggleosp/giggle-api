@@ -1,8 +1,5 @@
 package com.giggle.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,10 +16,26 @@ public class VenueType implements Serializable {
 
     @Id
     @GeneratedValue
-    @Getter @Setter private long id;
+    private long id;
     @NotNull
-    @Getter @Setter private String name;
+    private String name;
 
     public VenueType() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

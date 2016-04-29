@@ -4,7 +4,6 @@ import com.giggle.JinqSource;
 import com.giggle.models.City;
 import com.giggle.models.Country;
 import com.giggle.models.County;
-import com.giggle.repositories.country.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -60,6 +59,12 @@ public class CountryRepositoryImpl implements CountryRepository {
                 .where(c -> c.getCounty().getId() == id)
                 .toList();
         return cities.isEmpty() ? null : cities;
+    }
+
+    @Override
+    public List<City> getCities() {
+        return source.cities(em)
+                .toList();
     }
 
 }

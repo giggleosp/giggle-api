@@ -1,6 +1,7 @@
 package com.giggle.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -15,7 +16,7 @@ public class UserVenue {
 
     @Id
     @GeneratedValue
-    private long id;
+    @Getter private long id;
     @ManyToOne @NotNull
     @JsonIgnore
     private User user;
@@ -29,6 +30,7 @@ public class UserVenue {
     private Timestamp dateUpdated;
 
     public UserVenue() {
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
     }
 
     public UserVenue(User user, Venue venue) {
@@ -39,6 +41,10 @@ public class UserVenue {
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public User getUser() {
@@ -65,22 +71,6 @@ public class UserVenue {
         isFollowing = following;
     }
 
-    public Timestamp getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(Timestamp dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
-    public Timestamp getDateUpdated() {
-        return dateUpdated;
-    }
-
-    public void setDateUpdated(Timestamp dateUpdated) {
-        this.dateUpdated = dateUpdated;
-    }
-
     public boolean isHidden() {
         return isHidden;
     }
@@ -95,5 +85,21 @@ public class UserVenue {
 
     public void setAdmin(boolean admin) {
         isAdmin = admin;
+    }
+
+    public Timestamp getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Timestamp dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Timestamp getDateUpdated() {
+        return dateUpdated;
+    }
+
+    public void setDateUpdated(Timestamp dateUpdated) {
+        this.dateUpdated = dateUpdated;
     }
 }

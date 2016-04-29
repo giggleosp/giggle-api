@@ -23,7 +23,8 @@ public class EventUser {
     @NotNull @ManyToOne
     @JsonIgnore
     private User user;
-    @NotNull @ManyToOne @Cascade(CascadeType.DELETE)
+    @NotNull @ManyToOne
+    @Cascade(CascadeType.PERSIST)
     @JsonIgnore
     private Event event;
     private boolean isFollowing;
