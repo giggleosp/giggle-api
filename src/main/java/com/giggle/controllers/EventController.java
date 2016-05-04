@@ -31,7 +31,7 @@ public class EventController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    @PreAuthorize("hasRole('ROLE_ACT','ROLE_VENUE')")
+    @PreAuthorize("hasAnyRole('ROLE_ACT','ROLE_VENUE')")
     public @ResponseBody long addEvent(
             @RequestPart Event event, @RequestPart User user,
             @RequestPart(required = false) MultipartFile photo) {
